@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cafe House</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #ff6b6b;
+      --primary-dark: #ff5252;
+      --dark-bg: #121212;
+      --dark-card: #1e1e1e;
+      --dark-text: #e0e0e0;
+      --dark-border: #333;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      background: var(--dark-bg);
+      color: var(--dark-text);
+    }
+    header {
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+      position: relative;
+    }
+    header h1 {
+      font-size: 3em;
+    }
+    .delivery-banner {
+      background: var(--primary);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .delivery-banner i {
+      font-size: 1.2em;
+    }
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2em;
+    }
+    h2 {
+      margin-top: 1.5em;
+      border-bottom: 2px solid var(--dark-border);
+      padding-bottom: 0.5em;
+      color: var(--primary);
+    }
+    .menu-category {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 1em;
+    }
+    .item {
+      background: var(--dark-card);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: calc(25% - 20px);
+      padding: 1em;
+      text-align: center;
+      transition: all 0.3s;
+      border: 1px solid var(--dark-border);
+    }
+    .item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.2);
+    }
+    .item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 0.5em;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+    }
+    .item h4 {
+      margin: 0.5em 0;
+      color: var(--primary);
+    }
+    .item p {
+      color: #aaa;
+    }
+    .delivery-info, .location-info {
+      background: var(--dark-card);
+      border-radius: 10px;
+      padding: 2em;
+      margin: 2em 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      border: 1px solid var(--dark-border);
+    }
+    .delivery-text, .location-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    .delivery-image, .location-map {
+      flex: 1;
+      min-width: 300px;
+    }
+    .delivery-image img, .location-map iframe {
+      width: 100%;
+      border-radius: 10px;
+      min-height: 300px;
+      border: 1px solid var(--dark-border);
+    }
+    .order-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .order-btn:hover {
+      background: var(--primary-dark);
+    }
+    .address {
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+    .address i {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      background: #111;
+      color: white;
+      margin-top: 3em;
+      border-top: 1px solid var(--dark-border);
+    }
+    ul {
+      color: #ccc;
+    }
+    @media (max-width: 768px) {
+      .item {
+        width: calc(50% - 20px);
+      }                                                                             
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Cafe House</h1>
+    <br>
+    <h3> By Rahul kadao</h3>
+  </header>
+
+  <div class="delivery-banner">
+    <i class="fas fa-motorcycle"></i>
+    <span>We deliver! Order online for home delivery</span>
+    <h4>Delivery near Mohadi 5km Radius</h4>
+  </div>
+
+  <section>
+    <div class="delivery-info">
+      <div class="delivery-text">
+        <h2>Home Delivery Service</h2>
+        <p>Enjoy your favorite meals from the comfort of your home! Our fast delivery service brings delicious food right to your doorstep.</p>
+        <ul style="margin: 15px 0; padding-left: 20px;">
+          <li>Delivery within 30-45 minutes</li>
+          <li>Delivery charge: ₹20</li>
+          <li>Minimum order value: ₹150</li>
+        </ul>
+        <button class="order-btn">
+          <i class="fas fa-phone-alt"></i>
+          Order Now: 9172483729
+        </button>
+      </div>
+      <div class="delivery-image">
+        <img src="IMG_20250622_124533845_HDR[1].jpg" alt="Food delivery">
+      </div>
+    </div>
+
+    <!-- Pizza Section -->
+    <h2>Pizza</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://images.unsplash.com/photo-1571066811602-716837d681de" alt="Margherita Pizza"/><h4>Margherita Pizza</h4><p>₹120</p></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94" alt="Veg Pizza"/><h4>Veg Pizza</h4><p>₹130</p></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1593504049359-74330189a345" alt="Cheese Corn Pizza"/><h4>Cheese Corn Pizza</h4><p>₹140</p></div>
+      <div class="item"><img src="https://imgs.search.brave.com/oirojMcGh2m8xzd0pJrC6-urOQK_gPkW0z5L5cp5veg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9pbmRp/YW4tcGFuZWVyLXBp/enphLWZyZXNoLWNv/dHRhZ2UtY2hlZXNl/LWN1YmVzLXdoaXRl/LXNhdWNlLWluZGlh/bi1wYW5lZXItcGl6/emEtZnJlc2gtY290/dGFnZS1jaGVlc2Ut/MTE0OTIxNDA5Lmpw/Zw" alt="Paneer Pizza"/><h4>Paneer Pizza</h4><p>₹160</p></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Onion Pizza"/><h4>Onion Pizza</h4><p>₹130</p></div>
+      <div class="item"><img src="https://imgs.search.brave.com/kM6ak6hB2aVqDP3fdasoDhZWHoyRP06ZqO0-s3aj6Dg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2VyaW91c2VhdHMu/Y29tL3RobWIvUldw/ZFB5d0JIUHBPR2RW/Wkp4OTRxSGFxQUJZ/PS8xNTAweDAvZmls/dGVyczpub191cHNj/YWxlKCk6bWF4X2J5/dGVzKDE1MDAwMCk6/c3RyaXBfaWNjKCkv/MjAyMTExMTUtT09O/SS1QSVpaQS1CVVJT/VFRPTVMtQU5EUkVX/LUpBTkpJR0lBTi0z/Ni03Y2FiZWFhYjMw/YWY0NDEwOGI1NDFm/MTQ0YzBhMTlkZS5q/cGc" alt="Tomato Pizza"/><h4>Tomato Pizza</h4><p>₹130</p></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c" alt="Capsicum Pizza"/><h4>Capsicum Pizza</h4><p>₹130</p></div>
+      <div class="item"><img src="https://imgs.search.brave.com/0bdfjv_La7lXoOm9R1WO5cG42IqjhwpyQ7770hWu7rQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzFlLzMz/LzYxLzFlMzM2MTYy/YzYxNzJmZGIzMGRh/MDQ0OWYxYmZkNzFk/LmpwZw" alt="Tandoori Paneer Pizza"/><h4>Tandoori Paneer Pizza</h4><p>₹180</p></div>
+      <div class="item"><img src="https://www.secretharbourpizza.com.au/wp-content/uploads/2023/02/Chefs-Special-pizza.jpg" alt="Special Pizza"/><h4>Special Pizza</h4><p>₹200</p></div>
+    </div>
+
+    <!-- Maggi Section -->
+    <h2>Maggi</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://imgs.search.brave.com/3V7kMU9aGa9F2hdM8cGSnuoL7JqIk9UFORFrjFH5z2A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA4LzU5Lzg1LzE0/LzM2MF9GXzg1OTg1/MTQ3MV9Ub0o1QWZa/VGJxR2FLclM4cUZm/MzliTDc3RjREaEpF/Qy5qcGc" alt="Plain Maggi"/><h4>Plain Maggi</h4><p>₹70</p></div>
+      <div class="item"><img src="https://th.bing.com/th/id/OIP.hjDtBZm9aDa2VwXrMs5MegHaEw?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Veg Maggi"/><h4>Veg Maggi</h4><p>₹90</p></div>
+      <div class="item"><img src="https://imgs.search.brave.com/6uYrXB_vBf2jUnL6FILOb5Ejw6gsO8udX5oUOOgiU-I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aW5r/dXNjYWZlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNC8w/My9NYWdnaS01Lmpw/Zw" alt="Veg Cheese Maggi"/><h4>Veg Cheese Maggi</h4><p>₹100</p></div>
+      <div class="item"><img src="https://imgs.search.brave.com/1fqh_02mwkJHkXLq0etMXSSRDLLTkthLFTJMFUdyGe8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzgwLzE2/LzFhLzgwMTYxYTU5/MTAwZmM3MjcxYTky/YWNlNWQwYjBkNWYw/LmpwZw" alt="Cheese Maggi"/><h4>Cheese Maggi</h4><p>₹90</p></div>
+      <div class="item"><img src="https://th.bing.com/th/id/R.ce031a82f9180b6cfe16e5544b2f62b0?rik=vvW54ujtzBmZOg&riu=http%3a%2f%2fampmfoodcourt.com%2fwp-content%2fuploads%2f2023%2f10%2fDreamShaper_v7_vegetable_maggi_0-2.jpg&ehk=LfyLredF%2fBMM1C%2b8v5XG66NYsSyGMBf3nCCrX%2brsgvQ%3d&risl=&pid=ImgRaw&r=0" alt="Cheese Corn Maggi"/><h4>Cheese Corn Maggi</h4><p>₹110</p></div>
+    </div>
+
+    <!-- Starters Section -->
+    <h2>Starters</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://rumkisgoldenspoon.com/wp-content/uploads/2021/04/Chilli-paneer-dry.jpg" alt="Chilly Paneer"/><h4>Chilly Paneer</h4><p>₹140</p></div>
+      <div class="item"><img src="https://buddymantra.com/wp-content/uploads/2020/08/honey-glazed-chilli-potato-recipe-1.jpg" alt="Chilly Potato"/><h4>Chilly Potato</h4><p>₹100</p></div>
+      <div class="item"><img src="https://th.bing.com/th/id/OIP.OJTfecF3xGFL9QtnCX5ZeQHaE7?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Chilly Soya"/><h4>Chilly Soya</h4><p>₹100</p></div>
+      <div class="item"><img src="https://1.bp.blogspot.com/-JowEFJzs3Kc/YMyScIeK5UI/AAAAAAAAGRE/T8u0oXbpV3YLkCC8TilHKMzNo0oyFfNRwCLcBGAsYHQ/s1600/cripy%2Bcorn%2Bchilli.jpeg" alt="Chilly Corn"/><h4>Chilly Corn</h4><p>₹130</p></div>
+      <div class="item"><img src="https://i.ytimg.com/vi/Zs4_hYiT084/maxresdefault.jpg" alt="Crispy Veg"/><h4>Crispy Veg</h4><p>₹120</p></div>
+    </div>
+
+    <!-- French Fries Section -->
+    <h2>French Fries</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5" alt="Salted Fries"/><h4>Salted Fries</h4><p>₹80</p></div>
+      <div class="item"><img src="https://th.bing.com/th/id/OIP.Mic-2qEeAlnDGE59TUPOLAHaFj?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Peri-Peri Fries"/><h4>Peri-Peri Fries</h4><p>₹90</p></div>
+    </div>
+
+    <!-- Rolls Section -->
+    <h2>Rolls</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://www.chatpataaffair.com/wp-content/uploads/2023/05/veg-roll.jpg2_-1000x1000.jpg" alt="Veg Rolls"/><h4>Veg Rolls</h4><p>₹70</p></div>
+      <div class="item"><img src="https://spicecravings.com/wp-content/uploads/2020/12/Paneer-kathi-Roll-Featured-1.jpg" alt="Paneer Rolls"/><h4>Paneer Rolls</h4><p>₹90</p></div>
+      <div class="item"><img src="https://i.ytimg.com/vi/pq7Hql6NSqA/maxresdefault.jpg" alt="Corn Rolls"/><h4>Corn Rolls</h4><p>₹80</p></div>
+    </div>
+
+    <!-- Sandwich Section -->
+    <h2>Sandwich</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://i2.wp.com/www.vegrecipesofindia.com/wp-content/uploads/2014/01/grilled-sandwich-1.jpg" alt="Veg Grilled Sandwich"/><h4>Veg Grilled Sandwich</h4><p>₹70</p></div>
+      <div class="item"><img src="https://images.herzindagi.info/image/2021/Nov/cheese-loaded-sandwiches.jpg" alt="Veg Cheese Grilled Sandwich"/><h4>Veg Cheese Grilled Sandwich</h4><p>₹100</p></div>
+      <div class="item"><img src="https://th.bing.com/th/id/OIP.kQRXa-ZdUeCiX28xm5mSQAHaFj?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Paneer Grilled Sandwich"/><h4>Paneer Grilled Sandwich</h4><p>₹100</p></div>
+      <div class="item"><img src="https://easyindiancookbook.com/wp-content/uploads/2022/02/Paneer-Sandwich-33-1200x1200.jpg" alt="Paneer Cheese Grilled Sandwich"/><h4>Paneer Cheese Grilled Sandwich</h4><p>₹120</p></div>
+      <div class="item"><img src="https://i0.wp.com/dishesandflavors.com/wp-content/uploads/2021/01/Veg-Grilled-Cheese-Sandwich.jpg?zoom=3&resize=800%2C600&ssl=1" alt="Cheese Grilled Sandwich"/><h4>Cheese Grilled Sandwich</h4><p>₹80</p></div>
+      <div class="item"><img src="https://www.bigbasket.com/media/uploads/recipe/w-l/3644_1_1.jpg"/><h4>Cheese Corn Sandwich</h4><p>₹100</p></div>
+    </div>
+
+    <!-- Mocktail Section -->
+    <h2>Mocktail</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://drinksgeek.com/wp-content/uploads/2022/07/Blue-Lagoon-cocktail-1024x682.jpg" alt="Blue Lagoon"/><h4>Blue Lagoon</h4><p>₹60</p></div>
+      <div class="item"><img src="https://images.cocktailwave.com/mojito.png" alt="Mojito"/><h4>Mojito</h4><p>₹60</p></div>
+      <div class="item"><img src="https://th.bing.com/th/id/OIP.-a2b6bgCurzKUOv-J9eJmgAAAA?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Plain Sprite"/><h4>Plain Sprite</h4><p>₹30</p></div>
+    </div>
+
+    <!-- Ice Cream Section -->
+    <h2>Ice Cream</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://lilluna.com/wp-content/uploads/2020/04/vanilla-ice-cream-resize-10.jpg" alt="Vanilla"/><h4>Vanilla</h4><p>₹40</p></div>
+      <div class="item"><img src="https://img.freepik.com/premium-photo/delicious-butterscotch-ice-cream-bowl-isolated-white-background_759447-4754.jpg?w=2000" alt="Butter-Scotch"/><h4>Butter-Scotch</h4><p>₹50</p></div>
+      <div class="item"><img src="https://th.bing.com/th/id/OIP.MsYaUWV86XOKuUyJKy11LQHaLH?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Chocolate"/><h4>Chocolate</h4><p>₹50</p></div>
+    </div>
+
+    <!-- Pasta Section -->
+    <h2>Pasta</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://i.pinimg.com/originals/3a/02/3e/3a023edae3e018e2761cf296058986ce.jpg" alt="Red Sauce Pasta"/><h4>Red Sauce Pasta</h4><p>₹120</p></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb" alt="White Sauce Pasta"/><h4>White Sauce Pasta</h4><p>₹120</p></div>
+    </div>
+
+    <!-- Shakes Section -->
+    <h2>Shakes</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://cdn1.foodviva.com/static-content/food-images/milkshake-recipes/chocolate-milkshake-recipe/chocolate-milkshake-recipe.jpg" alt="Chocolate Shake"/><h4>Chocolate Shake</h4><p>₹60</p></div>
+      <div class="item"><img src="https://th.bing.com/th/id/OIP.lq605u9Yd9p-pjwEbkE79QHaLH?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Orio Shake"/><h4>Orio Shake</h4><p>₹70</p></div>
+      <div class="item"><img src="https://live.staticflickr.com/4402/36919099021_29ff61488f_b.jpg" alt="Kit-Kat Shake"/><h4>Kit-Kat Shake</h4><p>₹80</p></div>
+      <div class="item"><img src="https://veggiedesserts.com/wp-content/uploads/2021/03/mango-shake-5sq.jpg" alt="Mango Shake"/><h4>Mango Shake</h4><p>₹70</p></div>
+      <div class="item"><img src="https://classicfoodsbakery.com/wp-content/uploads/2020/11/Pineapple-milkshake-order-online.jpg" alt="Pineapple Shake"/><h4>Pineapple Shake</h4><p>₹70</p></div>
+      <div class="item"><img src="https://thumbs.dreamstime.com/z/glass-kiwi-milkshake-white-kiwi-milkshake-159121917.jpg" alt="Kiwi Shake"/><h4>Kiwi Shake</h4><p>₹80</p></div>
+      <div class="item"><img src="https://livinghealthywithchocolate.com/wp-content/uploads/2016/02/Paleo-Strawberry-Milkshake-dairy-free-sugar-free-gluten-free.jpg" alt="Strawberry Shake"/><h4>Strawberry Shake</h4><p>₹70</p></div>
+      <div class="item"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699" alt="Choco-Chip Shake"/><h4>Choco-Chip Shake</h4><p>₹80</p></div>
+    </div>
+
+    <!-- Burger Section -->
+    <h2>Burger</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Veggies Burger"/><h4>Veggies Burger</h4><p>₹70</p></div>
+      <div class="item"><img src="https://th.bing.com/th/id/OIP.9UMDE7dKI25pVl90hBkc1wHaE8?rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Veg Cheese Burger"/><h4>Veg Cheese Burger</h4><p>₹90</p></div>
+      <div class="item"><img src="https://www.seekpng.com/png/detail/892-8929260_spicy-paneer-burger-veg-cheese-burger.png" alt="Veg Cheese Paneer Burger"/><h4>Veg Cheese Paneer Burger</h4><p>₹110</p></div>
+      <div class="item"><img src="https://www.highonchicken.com/wp-content/uploads/2023/07/image49-2-1000x572.png" alt="Peri-Peri Burger"/><h4>Peri-Peri Burger</h4><p>₹70</p></div>
+    </div>
+
+    <!-- Momos Section -->
+    <h2>Momos</h2>
+    <div class="menu-category">
+      <div class="item"><img src="https://passion2cook.com/wp-content/uploads/2023/01/veg-momos-recipe-1024x576.jpg" alt="Veg Momos"/><h4>Veg Momos</h4><p>₹80</p></div>
+      <div class="item"><img src="https://nishamadhulika.in/wp-content/uploads/2021/06/Paneer-Momos-Recipe-1024x536.jpg" alt="Paneer Momos"/><h4>Paneer Momos</h4><p>₹100</p></div>
+      <div class="item"><img src="https://tse4.mm.bing.net/th/id/OIP.gqLx4Qr1FSA4WE3fbJDHDgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Veg Crunchy Momos"/><h4>Veg Crunchy Momos</h4><p>₹100</p></div>
+      <div class="item"><img src="https://hlfrankie.com/wp-content/uploads/2024/09/Paneer-Crunchy-Momos.png" alt="Paneer Crunchy Momos"/><h4>Paneer Crunchy Momos</h4><p>₹120</p></div>
+    </div>
+
+    <div class="location-info">
+      <div class="location-text">
+        <h2>Our Location</h2>
+        <div class="address">
+          <p><i class="fas fa-map-marker-alt"></i> <strong>The Cafe House</strong></p>
+          <p>Near Tehsil karyalaya</p>
+          <p>Mohadi, Maharashtra 441909</p>
+          <p>India</p>
+        </div>
+        <div class="contact-info">
+          <p><i class="fas fa-phone-alt"></i> +91 9172483729</p>
+          <p><i class="fas fa-clock"></i> Open daily: 9:00 AM - 8:00 PM</p>
+        </div>
+      </div>
+      <div class="location-map">
+     "<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3716.9827787343143!2d79.6728977!3d21.3116968!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2b3d21cc876505%3A0x90ae3ee648f170ce!2sThe%20cafe%20House%20%EF%B8%8F!5e0!3m2!1sen!2sin!4v1751169647761!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025|If you want to make a "Website" text massage in</p>
+     <p><i class="fas fa-envelope"></i> itsahu24@gmail.com</p>
+     <p>Contact : 8411908798</p>
+  </footer>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
